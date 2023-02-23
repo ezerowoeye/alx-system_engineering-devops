@@ -1,1 +1,1 @@
-0x05-processes_and_signals project
+# Solutions to tasks on Processes and signals
