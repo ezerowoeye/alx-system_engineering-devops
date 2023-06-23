@@ -1,59 +1,82 @@
-## 0x1A - Application server
+# Project Name.
+**0x1A. Application server**
 
-### Description
+## Author's Details.
+Name: *Wendy Munyasi.*
 
-Installing gunicorn and running the app server.
+Email: *wendymunyasi@gmail.com*
+
+Tel:*+254707240068.*
+
+##  Requirements
+
+*   Allowed editors: `vi`, `vim`, `emacs`.
+*   All your files will be interpreted/compiled on Ubuntu 20.04 LTS.
+*   All your files should end with a new line.
+*   All your Bash script files must be executable.
+*   Your Bash scripts must pass `Shellcheck` without any error.
+*   The first line of all your Bash scripts should be exactly `#!/usr/bin/env bash`.
+*   The second line of all your Bash scripts should be a comment explaining what is the script doing.
+
+
+## Project Description.
+
+* **0. Set up development with Python** - Serve what you built for `AirBnB clone v2 - Web framework` on `web-01`. This task is an exercise in setting up your development environment, which is used for testing and debugging your code before deploying it to production.
+
+	Requirements:
+
+	*	Make sure that `task #3` of your `SSH project`[(https://github.com/wendymunyasi/alx-system_engineering-devops/tree/master/0x0B-ssh)] is completed for `web-01`. The checker will connect to your servers.
+	*	Git clone your `AirBnB_clone_v2` on your `web-01` server.
+	*	Configure the file `web_flask/0-hello_route.py` to serve its content from the route `/airbnb-onepage/` on port `5000`.
+
+	Example:
+
+  **Window 1:**
+  ```
+  ubuntu@229-web-01:~/AirBnB_clone_v2$ python3 -m web_flask.0-hello_route
+  * Serving Flask app "0-hello_route" (lazy loading)
+  * Environment: production
+    WARNING: Do not use the development server in a production environment.
+    Use a production WSGI server instead.
+  * Debug mode: off
+  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+  35.231.193.217 - - [02/May/2019 22:19:42] "GET /airbnb-onepage/ HTTP/1.1" 200 -
+  ```
+
+  **Window 2:**
+  ```
+  ubuntu@229-web-01:~/AirBnB_clone_v2$ curl 127.0.0.1:5000/airbnb-onepage/
+  Hello HBNB!ubuntu@229-web-01:~/AirBnB_clone_v2$
+  ```
+---
+
+* **1. Set up production with Gunicorn** - Get your production application server set up with `Gunicorn` on `web-01`, port `5000`.
 
 ---
 
-### Project Takeaways
+* **2. Serve a page with Nginx** - Building on your work in the previous tasks, configure `Nginx` to serve your page from the route `/airbnb-onepage/`.
 
-- How to serve a Flask app with Gunicorn and Nginx on Ubuntu 14.04
-- Running Gunicorn
-- Upstarting Gunicorn
+	Requirements:
 
----
-
-### Tasks
-
-- Install Gunicorn
-  - Git clone your AirBnB_clone_v2
-  - Install Gunicorn and other libraries required by your application
-  - Create an Upstart script that starts a Gunicorn instance to serve web_flask/0-hello_route.py from your AirBnB_clone_v2
-  - Setup Nginx so that the route /airbnb-onepage/ points to your Gunicorn instance
-  - Nginx must serve this page both locally and on its public IP on port 80
-  - Upload your Upstart config file as 0-welcome_gunicorn-upstart_config
-  - Upload your Nginx config file as 0-welcome_gunicorn-nginx_config
-
-- Pass a query parameter
-  - Create an Upstart script that starts a Gunicorn instance to serve web_flask/6-number_odd_or_even.py from your AirBnB_clone_v2
-  - Setup Nginx so that the route/airbnb-dynamic/ points to your Gunicorn instance
-  - Nginx must serve this page both locally and on its public IP on port 80
-  - Upload your Upstart config file as 1-pass_parameter-upstart_config
-  - Upload your Nginx config file as 1-pass_parameter-nginx_config
-
-- Let's do this for your API
-  - Git clone your AirBnB_clone_v3
-  - data dump
-  - Create an Upstart script that starts a Gunicorn instance to serve api/v1/app.py from your AirBnB_clone_v3
-  - Make sure to use the necessary environment variables for your AirBnB_clone_v3 app
-  - Setup Nginx so that the route /api/ points to your Gunicorn instance
-  - Nginx must serve this page both locally and on its public IP on port 80
-  - Upload your Upstart config as 2-api-upstart_config
-  - Upload your Nginx config as 2-api-nginx_config
-
-
+	*	`Nginx` must serve this page both locally and on its public IP on port `80`.
+	*	`Nginx` should proxy requests to the process listening on port `5000`.
+	*	Include your `Nginx` config file as `2-app_server-nginx_config`.
 
 ---
 
-### Technologies Used
-* Language: Python
-* Operating System: Ubuntu 14.04 LTS (Trusty64)
+* **3. Add a route with query parameters** - In `AirBnB_clone_v2/web_flask/6-number_odd_or_even`, the route `/number_odd_or_even/<int:n>` should already be defined to render a page telling you whether an integer is odd or even. You’ll need to configure `Nginx` to proxy HTTP requests to the route` /airbnb-dynamic/number_odd_or_even/`(any integer) to a Gunicorn instance listening on port `5001`. Include your `Nginx` config file as `3-app_server-nginx_config`.
+
 ---
 
-### Author
-Mitali Sengupta
+* **4. Let's do this for your API** - Serve what you built for `AirBnB clone v3` - RESTful API on `web-01`. Upload your Nginx config file as `4-app_server-nginx_config`.
 
-<img src="http://pluspng.com/img-png/twitter-png-file-png-image-200.png" width=2% height=2%/> [@aadhibangalan](https://twitter.com/aadhibangalan) 
+---
 
-<img src="https://assets-cdn.github.com/images/icons/emoji/octocat.png" width=2% height=2%/>[MitaliSengupta](https://github.com/MitaliSengupta)
+* **5. Serve your AirBnB clone** - Serve what you built for `AirBnB clone - Web dynamic` on `web-01`. Upload your Nginx config file as `5-app_server-nginx_config`.
+
+---
+
+
+## Collaborate
+
+To collaborate, reach me through my email address wendymunyasi@gmail.com.
