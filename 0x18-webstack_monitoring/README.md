@@ -1,1 +1,0 @@
-This file contains the access ID and key to sumologic
