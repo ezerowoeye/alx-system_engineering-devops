@@ -4,7 +4,6 @@ Python script that returns information using REST API
 '''
 import requests
 from sys import argv
-
 if __name__ == "__main__":
     if len(argv) > 1:
         user = argv[1]
